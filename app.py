@@ -21,6 +21,12 @@ def query_db(query, args=(), one=False):
     return (rv[0] if rv else None) if one else rv
 
 
+def insert_db(query, args=(), one=False):
+    db = get_db()
+    db.execute(query, args)
+    db.commit()
+
+
 def init_db():
     with app.app_context():
         db = get_db()
@@ -35,9 +41,10 @@ def user(name):
         if u is None:
             return 'No such user'
         else:
-            return u
-    # u = query_db('insert into users(username) values(?)', [name])
-    return "created " + str(u)
+            return str(u)
+
+    insert_db('insert into users(username) values(?)', [name])
+    return "created " + name
     # return '<div style="background-color: red">byebye</div>'
 
 
