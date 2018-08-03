@@ -1,1 +1,1 @@
-Borrowed Code by Jonathan Harijanto 2018
+Borrowed Code by J 2018
