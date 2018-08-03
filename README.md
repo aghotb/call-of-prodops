@@ -1,1 +1,1 @@
-copyright jonathan 2018
+copyright jonathan harijanto 2018
